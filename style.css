@@ -1,0 +1,195 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    margin: 0px;
+    padding: opx;
+    background: #E1E1E1;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#geral {
+    margin: 0px auto;
+    padding: 0px;
+    width: 1080px;
+    height: auto;
+}
+#banner {
+    margin: 0px;
+    padding: 0px;
+    width: 1080px;
+    height: 250px;
+    background: url(img/Gif-logo.gif);
+    float: left;
+}
+#menu {
+    margin: 5px 0px;
+    padding: 0px;
+    width: 1080px;
+    height: 40px;
+    background: #000000;
+}
+.navbar-nav>li {
+    width: 200px !important;
+}
+.dropdown-menu,
+.dropdown-menu>li>a,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    background-color: black !important;
+    color: white !important;
+    background-image: none !important;
+}
+#novidades {
+    margin: 5px 0px;
+    margin-top: 5px;
+    padding: 0px;
+    width: 1080px !important;
+    height: auto;
+    float: left;
+}
+.destaque {
+    padding-left: 0px !important;
+}
+.imgdestaque {
+    margin-left: -10px !important;
+    margin: 5px 0px;
+    width: 100%;
+    height: 340px !important;
+    float: left;
+}
+.imgminiatura {
+    width: 800px !important;
+    height: 164px !important;
+}
+.imgtarja {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+}
+.ajusteesquerdo {
+    margin: 5px 0px;
+    margin-left: -30px;
+}
+.ajustedireito {
+    margin: 5px 0px;
+    float: right;
+    width: 100%;
+}
+.ajusteminiatura {
+    padding-right: 0px !important;
+}
+#produtos {
+    margin-left: 0px;
+    padding: 0px;
+    width: 1080px;
+    height: auto;
+    float: left;
+}
+#produtos img {
+    padding: 0px !important;
+    width: 540px;
+    height: 145px;
+    float: left;
+}
+.ajusteprodutos {
+    width: 540px;
+    max-width: 540px !important;
+}
+#clientes {
+    margin-left: -10px;
+    padding: 0px;
+    width: 1080px;
+    height: auto;
+    float: left;
+}
+#blog {
+    margin-left: -10px;
+    padding: 0px;
+    width: 1080px;
+    height: auto;
+    float: left;
+}
+#blog h2 {
+    margin: 0px;
+    text-align: justify;
+    font-weight: bold;
+}
+#blog p {
+    text-align: justify;
+}
+#contato {
+    background: #DFDFDF;
+    padding: 0px;
+    width: 1080px;
+    height: auto;
+    float: left;
+}
+.imgcontato {
+    margin: 4px;
+    width: 35px;
+    height: 35px;
+}
+.title {
+    margin: 25px 0px 10px;
+    font-size: 32px;
+    font-style: inherit;
+    text-align: center;
+}
+.subtittle {
+    margin: 2px 0px 10px;
+    font-size: 28px;
+    font-style: inherit;
+    font-weight: bolder;
+    text-align: center;
+}
+.well {
+    background: #DFDFDF !important;
+    border: none !important;
+}
+.legendaminiatura {
+    margin-left: 17px;
+    background: #D2D2D2;
+    opacity: 0.75;
+    font-size: 12px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    font-style: inherit;
+    font-weight: bolder;
+}
+.legendadestaque {
+    margin-left: 17px;
+    font-size: 24px;
+    top: 60%;
+    font-style: inherit;
+    font-weight: bolder;
+    text-align: center;
+}
+#texto_destaque {
+    text-align: justify;
+}
+.fundo {
+    background: #D2D2D2;
+    opacity: 0.75;
+    margin-left: 17px;
+    position: absolute;
+    right: 14px;
+    width: 642px;
+    top: 60%;
+    height: 120px;
+}
+#rodape {
+    margin: 5px 0px 0px;
+    background-color: #000000;
+    height: 40px;
+    width: 100%;
+    width: 1080px;
+}
+#rodape p {
+    margin-top: 5px;
+    font-size: 8px;
+    width: 100%;
+    color: #F0F0F0;
+    text-align: center;
+    position: absolute;
+}

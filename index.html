@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>blackout</title>
+    <script src="bibliotecas/angular.min.js"></script>
+    <script src="bibliotecas/jquery-3.1.0.js"></script>
+    <script src="bibliotecas/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="bibliotecas/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bibliotecas/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+  </head>
+  <body>
+    <div id="geral" class="container-fluid">
+      <!--Linha do Banner-->
+      <div class="row">
+        <div id="banner" class="col-xs-12"></div>
+      </div>
+      <!--Linha do menu-->
+      <div class="row">
+        <div id="menu" class="col-xs-12">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li><a href="index.html" class="btn">Inicio</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                      role="button" aria-haspopup="true" aria-expanded="false">Produtos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="produtos.html">Cortinas</a></li>
+                      <li><a href="produtos_papeis_de_parede.html">Papéis de Parede</a></li>
+                      <li><a href="persianas.html">Persianas</a></li>
+                      <li><a href="produtos_revestimento.html">Revestimentos</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="clientes.html" class="btn">Clientes</a></li>
+                  <li><a href="blog.html" class="btn">Blog</a></li>
+                  <li><a href="#contato" class="btn">Contato</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        </nav>
+      </div>
+      <!--Linha da Galeria de Novidades-->
+      <div class="row">
+        <!--Componente da galeria-->
+        <div id="novidades" class="col-xs-12 ajusteesquerdo" ng-app="gal" ng-controller="ctl_gal as ctl">
+          <!--Destaque da galeria-->
+          <div id="destaque" class="col-xs-8">
+            <img ng-src="img/{{ctl.destaque.foto}}" class="imgdestaque img-responsive" />
+            <img src="img/tarja.png" class="imgtarja" />
+            <div class="fundo">
+              <p class="legendadestaque">{{ctl.destaque.titulo}}
+              <p>
+              <p class="textodestaque">{{ctl.destaque.chamada}}</p>
+            </div>
+          </div>
+          <!--Miniaturas da galeria-->
+          <div class="col-xs-4 ajusteminiatura">
+            <!--ajuste das imagens das miniaturas-->
+            <div class="col-xs-12 ajusteminiatura" ng-repeat="mini in ctl.miniaturas">
+              <img ng-src="img/{{mini.foto}}" ng-click="ctl.seleciona($index)" class="imgdestaque img-responsive ajustedireito imgminiatura"
+                />
+              <p class="legendaminiatura">{{mini.titulo}}</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          angular.module("gal",[])
+          .controller("ctl_gal",function($timeout){
+          //this.miniaturas=["dicas-e-curiosidades/tipos-de-cortinas.jpg", 
+          //"dicas-e-curiosidades/decorando-com-papel-de-parede.jpeg"]
+          this.miniaturas=[{
+          foto:"dicas-e-curiosidades/tipos-de-cortinas.jpg",
+          titulo:"Escolhendo as cortinas corretas para seus ambientes",
+          chamada:"Qual a cortina certa para a janela de sua casa? primeiramente devemos definir qual o objetivo: Escurecer o ambiente, aproveitar a luz natural, decorar, trazer mais aconchego. Existem vá..."
+          },{
+          foto:"dicas-e-curiosidades/decorando-com-papel-de-parede.jpeg",
+          titulo:"Decorando com papel de parede",
+          chamada:"Prático, rápido de aplicar e de trocar, cada vez mais fácil de limpar. A decoração com papel parede esta cada vez mais versátil, podendo criar ambientes sofisticados, despojados, rúst..."
+          }]
+          this.destaque=this.miniaturas[0]
+          this.seleciona=function(i){
+          this.destaque=this.miniaturas[i]
+          }
+          var i=0
+          var self = this;
+          this.muda_so=function(){
+          self.destaque=self.miniaturas[i]
+          i++
+          if(i>=self.miniaturas.length)
+          i=0
+          $timeout(self.muda_so, 5000)
+          }
+          this.muda_so()
+          })
+        </script>
+      </div>
+      <div class="row" id="produtos">
+        <div class=" col-sx-12 title">Produtos</div>
+        <div class="col-xs-3">
+          <a href="produtos.html"> <img class="img-responsive ajustedireito" src="img/fotos_site_finaliza_do_e_com_logo/tecido/tecido5.jpg" /></a>
+          <div class="subtittle">Cortinas</div>
+        </div>
+        <div class="col-xs-3">
+          <a href="produtos_papeis_de_parede.html"> <img class="img-responsive ajustedireito" src="img/fotos_site_finaliza_do_e_com_logo/papel_de_parede/papel5.jpg" /></a>
+          <div class="subtittle">Papeis de Parede</div>
+        </div>
+        <div class="col-xs-3">
+          <a href="persianas.html"><img class="img-responsive ajustedireito" src="img/fotos_site_finaliza_do_e_com_logo/persiana_horizontal/horizontal5.jpg"
+            /></a>
+          <div class="subtittle">Persianas</div>
+        </div>
+        <div class="col-xs-3">
+          <a href="produtos_revestimento.html"><img class="img-responsive ajustedireito" src="img/fotos_site_finaliza_do_e_com_logo/revestimento/tetris2.jpg" /></a>
+         
+          <div class="subtittle">Revestimento</div>
+        </div>
+      </div>
+      <div class="title">Fale Conosco</div>
+      <div id="contato">
+        <div class="row">
+          <!--Coluna do formulario-->
+          <div class="col-xs-6">
+            <div class="col-xs-12">
+              <br>
+              <br>
+              <br>
+            </div>
+            <div class="col-xs-12">
+              <div class="col-xs-2">
+                <img class="imgcontato" src="img/1470507300_Instagram.png" />
+              </div>
+              <div class="col-xs-10">
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="col-xs-2">
+                <img class="imgcontato" src="img/1470507303_Facebook.png" />
+              </div>
+              <div class="col-xs-10">
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="col-xs-2">
+                <img class="imgcontato" src="img/telefone.png">
+              </div>
+              <div class="col-xs-10">
+                +55 85 3261.4122 | 3038.4122 <br> +55 85 99711.3098 | 98741.5818
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="col-xs-2">
+                <img class="imgcontato" src="img/email.png" />
+              </div>
+              <div class="col-xs-10">
+                <br> E-mail: vendas@blackoutcortinas.com.br
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="col-xs-2">
+                <img class="imgcontato" src="img/mapa.png" />
+              </div>
+              <div class="col-xs-10">
+                Rua Costa Barros, 2000 - Loja 7 - Aldeota <br> CEP: 60160-281 - Fortaleza-CE
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <form class="well">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Mensagem</label>
+                <textarea rows="10" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <button type = "submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="rodape" class="col-xs-12">
+          <p>Copyright 2016 Blackoutcortinas. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
